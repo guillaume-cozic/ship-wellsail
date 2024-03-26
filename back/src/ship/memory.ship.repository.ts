@@ -1,0 +1,163 @@
+export class MemoryShipRepository {
+  private ships: Array<Ship> = [
+    {
+      id: 1,
+      title: 'Grain de sail II - Grain de sail',
+      location: 'Saint-malo | Caraïbes',
+      detail: ['350T', '8n'],
+      next_departure: '2024',
+      percentage_decarbonization: 90,
+      image:
+        'https://media.ouest-france.fr/v1/pictures/MjAyMTA3OWQwZDliZmExMDE5M2QyYmVlMDFiYTJjN2I4NWJlMmY?width=1260&focuspoint=50%2C62&cropresize=1&client_id=bpeditorial&sign=c42d54797209f0a22b6fab397440f9a0f0a7dfdebc79704b2f7784d7727e9ed2',
+      type: 'freight',
+      subscription_link: '',
+      ticketing: '',
+    },
+    {
+      id: 2,
+      title: 'Windcoop',
+      location: 'Marseille | Majunga et Toamasina, Madagascar',
+      detail: ['1400T', '8n'],
+      next_departure: '2026',
+      percentage_decarbonization: 10,
+      image:
+        'https://static.actu.fr/uploads/2022/11/le-premier-container-a-voile-pour-arcadie.jpg',
+      type: 'freight',
+      subscription_link: '',
+      ticketing: '',
+    },
+    {
+      id: 3,
+      title: 'Sailcoop',
+      type: 'passengers',
+      location: 'Saint-Raphaël | Calvi Corse',
+      detail: ['8 passagers'],
+      next_departure: 'Avril 2024',
+      percentage_decarbonization: 90,
+      image:
+        'https://media.ouest-france.fr/v1/pictures/MjAyMjA1MmNiYTcwMGJiMmZiYzc1MGMyZGFhZDM4NTBmODUxYTY?width=1260&focuspoint=50%2C25&cropresize=1&client_id=bpeditorial&sign=b256d313ae43518b28d1299fe28951652e836c3af4dad631cbd04105c45b4aca',
+      subscription_link: 'https://souscription.sailcoop.fr',
+      ticketing: 'https://resa.sailcoop.fr/fr/voir-et-a-faire',
+    },
+    {
+      id: 4,
+      title: 'Ameno | Towt',
+      location: 'Havre | Brésil',
+      detail: ['1400T', '8n'],
+      next_departure: '2026',
+      percentage_decarbonization: 90,
+      image:
+        'https://www.towt.eu/wp-content/uploads/2022/09/PIRIOU_voilier-cargoTOWT_1-scaled-1-1.jpg',
+      type: 'freight',
+      subscription_link: '',
+      ticketing: '',
+    },
+    {
+      id: 5,
+      title: 'Pahi Fano | Eco Trans Ocean',
+      location: 'Havre | Brésil | Tahiti',
+      detail: ['1400T', '8n'],
+      next_departure: '2026',
+      percentage_decarbonization: 60,
+      image:
+        'https://www.ecotransocean.com/wp-content/uploads/2021/12/EcoTransOcean_Aplat1.jpg',
+      type: 'freight',
+      subscription_link: '',
+      ticketing: '',
+    },
+    {
+      id: 6,
+      title: 'Hisseo',
+      location: 'Meditérannée',
+      detail: ['1400T', '8n'],
+      next_departure: '2026',
+      percentage_decarbonization: 90,
+      image:
+        'https://static.wixstatic.com/media/0a792d_209023f731be4f5c8beef492addb4a20~mv2.jpg/v1/fill/w_450,h_600,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/20240119%20FwdHigh%20Illu%20concept%20HISSEO%20(1).jpg',
+      type: 'freight',
+      subscription_link: '',
+      ticketing: '',
+    },
+    {
+      id: 7,
+      title: 'Iliens',
+      location: 'Belle île | Quiberon',
+      detail: ['1400T', '8n'],
+      next_departure: '2026',
+      percentage_decarbonization: 90,
+      image: 'https://iliens.fr/wp-content/uploads/2022/05/iliens-2022-1.jpg',
+      type: 'passengers',
+      subscription_link: '',
+      ticketing: 'https://iliens.fr/tarifs-et-horaires-2/',
+    },
+    {
+      id: 8,
+      title: 'Neoline',
+      location: 'Atlantique Nord',
+      detail: ['1400T', '8n'],
+      next_departure: '2026',
+      percentage_decarbonization: 90,
+      image:
+        'https://www.neoline.eu/wp-content/uploads/2023/01/22407-A-NEOLINER136SS-Vues-3D_Rendu-2-Baltimore-1800x1080.jpg',
+      type: 'freight',
+      subscription_link: '',
+      ticketing: '',
+    },
+    {
+      id: 9,
+      title: 'Nohé',
+      location: 'Portugal | Bretagne',
+      detail: ['Confection de vêtements bas carbone'],
+      next_departure: '2026',
+      percentage_decarbonization: 90,
+      image:
+        'https://www.nohe-wear.com/cdn/shop/files/transport_voile_nohe_mode_responsable_1248x704.jpg?v=1696326531',
+      type: 'freight',
+      subscription_link: '',
+      ticketing: '',
+    },
+    {
+      id: 10,
+      title: 'SailLink',
+      location: 'Dover | Boulogne-sur-Mer',
+      detail: [],
+      next_departure: '2026',
+      percentage_decarbonization: 90,
+      image:
+        'https://files.wbk.kreativmedia.ch/3b/c6/3bc63aea-d191-45b8-b0db-4ec2a77b83d8.jpg',
+      type: 'passengers',
+      subscription_link: 'https://saillink.co.uk/invest',
+      ticketing: '',
+    },
+    {
+      id: 11,
+      title: 'Le Canopée',
+      location: 'Bordeaux | Guyanne',
+      detail: ["Transport d'arianne 6"],
+      next_departure: '2026',
+      percentage_decarbonization: 40,
+      image:
+        'https://www.vplp.fr/wp-content/uploads/2023/03/Header-Canopee-1500x750px-1.png',
+      type: 'freight',
+      subscription_link: '',
+      ticketing: '',
+    },
+    {
+      id: 12,
+      title: 'Grain de sail I',
+      location: 'Bordeaux | Guyanne',
+      detail: [],
+      next_departure: '2024',
+      percentage_decarbonization: 90,
+      image:
+        'https://velic-consulting.com/wp-content/uploads/2023/10/GrainDeSail1.png',
+      type: 'freight',
+      subscription_link: '',
+      ticketing: '',
+    },
+  ];
+
+  async search(): Promise<Array<Ship>> {
+    return Promise.resolve(this.ships);
+  }
+}
