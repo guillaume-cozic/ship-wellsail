@@ -32,6 +32,23 @@ export const shipsSlice = createAppSlice({
                 },
             },
         ),
+        requestFreightTransport: create.asyncThunk(
+            async (params: { shipId: number, email: string, content: string}, thunkAPI:{ extra: any }) => {
+                return await thunkAPI.extra.shipApi.requestFreightTransport(params);
+            },
+            {
+                pending: state => {
+                    state.status = "loading"
+                },
+                fulfilled: (state, action) => {
+                    state.status = "idle"
+                    state.ships = action.payload
+                },
+                rejected: state => {
+                    state.status = "failed"
+                },
+            },
+        ),
     }),
     selectors: {
         selectShips: ships => ships.ships,
@@ -40,7 +57,7 @@ export const shipsSlice = createAppSlice({
 })
 
 // Action creators are generated for each case reducer function.
-export const { fetchShips } =
+export const { fetchShips, requestFreightTransport } =
     shipsSlice.actions
 
 // Selectors returned by `slice.selectors` take the root state as their first argument.

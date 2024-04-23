@@ -11,7 +11,7 @@ import {
 } from '@chakra-ui/react';
 import { GiHamburgerMenu } from 'react-icons/gi';
 import { AiOutlineClose } from 'react-icons/ai';
-import { FiSun } from 'react-icons/fi';
+import logo from "../assets/fav.jpeg";
 
 const navLinks = [
     { name: 'Me contacter via linkedin', path: 'https://linkedin.com/in/guillaumecozic', target: "_blank" },
@@ -35,11 +35,11 @@ export default function Navbar() {
                     <Avatar
                         href="#"
                         as={Link}
-                        size="sm"
+                        size="md"
                         showBorder={true}
                         borderColor="blue.400"
                         rounded="full"
-                        src="https://avatars2.githubusercontent.com/u/37842853?v=4"
+                        src={logo}
                     />
                     <HStack as="nav" spacing={1} display={{ base: 'none', md: 'flex' }} alignItems="center">
                         {navLinks.map((link, index) => (
@@ -47,8 +47,6 @@ export default function Navbar() {
                         ))}
                     </HStack>
                 </HStack>
-
-                <IconButton aria-label="Color Switcher" icon={<FiSun />} />
             </Flex>
 
             {/* Mobile Screen Links */}

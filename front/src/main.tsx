@@ -4,9 +4,24 @@ import { Provider } from "react-redux"
 import App from "./App"
 import { store } from "./app/store"
 import "./index.css"
-import {ChakraProvider} from "@chakra-ui/react";
+import { ChakraProvider } from "@chakra-ui/react";
+import {
+    createBrowserRouter,
+    RouterProvider,
+} from "react-router-dom";
 
 const container = document.getElementById("root")
+
+const router = createBrowserRouter([
+    {
+        path: "/:type",
+        element: <ChakraProvider><App/></ChakraProvider>
+    },
+    {
+        path: "/",
+        element: <ChakraProvider><App/></ChakraProvider>
+    },
+]);
 
 if (container) {
   const root = createRoot(container)
@@ -14,9 +29,7 @@ if (container) {
   root.render(
     <React.StrictMode>
       <Provider store={store}>
-          <ChakraProvider>
-            <App />
-          </ChakraProvider>
+          <RouterProvider router={router} />
       </Provider>
     </React.StrictMode>,
   )

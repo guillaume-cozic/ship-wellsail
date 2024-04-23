@@ -1,5 +1,4 @@
-import { Stack, HStack, Link, IconButton, LinkProps } from '@chakra-ui/react';
-// Here we have used react-icons package for the icons
+import { Stack, HStack, Link, IconButton } from '@chakra-ui/react';
 import { FaLinkedin } from 'react-icons/fa';
 
 const links = [
@@ -27,12 +26,10 @@ const Footer = () => {
             alignItems="center"
             direction={{ base: 'column', md: 'row' }}
         >
-
-
             {/* Desktop Screen */}
-            <HStack spacing={4} alignItems="center" d={{ base: 'none', md: 'flex' }}>
+            <HStack spacing={4} alignItems="center">
                 {links.map((link, index) => (
-                    <Link href={link.path} fontSize="sm" _hover={{ textDecoration: 'underline' }} target={link.target}>
+                    <Link key={index} href={link.path} fontSize="sm" _hover={{ textDecoration: 'underline' }} target={link.target}>
                         {link.name}
                     </Link>
                 ))}

@@ -3,23 +3,32 @@ import { GoContainer } from "react-icons/go";
 import { IoPerson } from "react-icons/io5";
 import {useAppDispatch} from "../app/hooks";
 import {fetchShips} from "../features/ships/shipsSlice";
+import {FaShip} from "react-icons/fa";
+import {useNavigate} from "react-router-dom";
 
 const Index = () => {
-
+    const navigate = useNavigate();
     const dispatch = useAppDispatch();
     const listPassengersShips = () => {
         dispatch(fetchShips({type: 'passengers'}));
+        navigate('/passengers');
     }
 
     const listFreightShips = () => {
         dispatch(fetchShips({type: 'freight'}));
+        navigate('/freight');
+    }
+
+    const listAllShips = () => {
+        dispatch(fetchShips({type: undefined}));
+        navigate('/');
     }
 
     return (
         <Box pb={8}>
             <Stack
                 pos="relative"
-                bgGradient={`linear(to-l, blue.500, blue.400 , cyan.400)`}
+                bgGradient={`linear(to-l, blue.500, blue.400, cyan.400)`}
                 height="250px"
                 w="100%"
             ></Stack>
@@ -45,11 +54,21 @@ const Index = () => {
 
                         <Stack direction={{ base: 'column', md: 'row' }} spacing={3}>
                             <Button
+                                leftIcon={<FaShip />}
+                                colorScheme="green"
+                                rounded="md"
+                                variant='outline'
+                                width='100%'
+                                onClick={ () => listAllShips() }
+                            >
+                                Tous les navires
+                            </Button>
+                            <Button
                                 leftIcon={<GoContainer />}
                                 colorScheme="blue"
                                 rounded="md"
                                 variant='outline'
-                                width='50%'
+                                width='100%'
                                 onClick={ () => listFreightShips() }
                             >
                                 Marchandises
@@ -59,8 +78,8 @@ const Index = () => {
                                 rounded="md"
                                 colorScheme="cyan"
                                 variant='outline'
-                                width='50%'
                                 onClick={ () => listPassengersShips() }
+                                width='100%'
                             >
                                 Passagers
                             </Button>

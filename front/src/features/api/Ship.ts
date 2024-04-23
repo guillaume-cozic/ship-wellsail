@@ -8,4 +8,8 @@ export default interface Ship {
     image: string;
     subscription_link: string | undefined;
     type: string;
+    website: string | undefined;
+    ticketing: string | undefined;
+    show_contact_btn: boolean;
+    flag: string;
 }
