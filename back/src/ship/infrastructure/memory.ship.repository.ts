@@ -343,7 +343,7 @@ export class MemoryShipRepository implements ShipRepository {
     {
       id: 21,
       title: 'The sea kite',
-      location: 'Marseille',
+      location: 'Lorient',
       detail: ['Solution de traction par kite'],
       next_departure: '2023',
       percentage_decarbonization: 0,
