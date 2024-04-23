@@ -2,11 +2,11 @@ name: Deploy to server
 
 on:
   push:
-    tags:
-      - '*'
+    branches:
+      - 'main'
 
 jobs:
-  build:
+  build-backend:
     runs-on: ubuntu-latest
 
     strategy:
@@ -22,5 +22,10 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
 
+      - name: Install dependencies
+        run: npm install
+        working-directory: ./back
+
       - run: npm run build
+        working-directory: ./back
 
