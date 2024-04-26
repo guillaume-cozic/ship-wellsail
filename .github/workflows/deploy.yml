@@ -64,8 +64,11 @@ jobs:
 
       - name: rsync
         run: |
-          rsync -avz --delete dist/ ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_HOST }}:/var/www/welltest/back/dist/
+          rsync -avz --delete dist/ ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_HOST }}:/var/www/wellsail/back/dist/
         working-directory: ./back
+
+      - name: Restart PM2 process
+        run: ssh ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_HOST }} 'pm2 restart wellsail'
 
   build-frontend:
     runs-on: ubuntu-latest
@@ -121,7 +124,7 @@ jobs:
 
       - name: rsync
         run: |
-          rsync -avz --delete dist/ ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_HOST }}:/var/www/welltest/front/dist/
+          rsync -avz --delete dist/ ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_HOST }}:/var/www/wellsail/front/dist/
         working-directory: ./front
 
 
