@@ -17,6 +17,13 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
+      - name: Setup SSH
+        run: |
+          mkdir -p ~/.ssh/
+          echo "${{ secrets.SERVER_SSH_KEY }}" > ~/.ssh/id_rsa
+          chmod 600 ~/.ssh/id_rsa
+          ssh-keyscan -t rsa ${{ secrets.SERVER_HOST }} >> ~/.ssh/known_hosts
+
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v4
         with:
@@ -31,7 +38,7 @@ jobs:
 
       - name: rsync
         run: |
-          rsync -avz --delete /dist/ ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:/var/www/welltest/back
+          rsync -avz --delete /dist/ ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_HOST }}:/var/www/welltest/back
         working-directory: ./back
 
 
