@@ -36,7 +36,7 @@ jobs:
           path: ./back/dist/
 
   deploy-backend:
-    needs: build-backend
+    needs: [build-backend, build-frontend]
     runs-on: ubuntu-latest
     steps:
       - name: Setup SSH Agent
@@ -47,7 +47,7 @@ jobs:
       - name: Download artifacts
         uses: actions/download-artifact@v4
         with:
-          name: dist
+          name: back
           path: ./back/dist/
 
       - name: Adding Known Hosts
@@ -88,7 +88,7 @@ jobs:
           path: ./front/dist/
 
   deploy-frontend:
-    needs: build-frontend
+    needs: [build-backend, build-frontend]
     runs-on: ubuntu-latest
     steps:
       - name: Setup SSH Agent
@@ -99,7 +99,7 @@ jobs:
       - name: Download artifacts
         uses: actions/download-artifact@v4
         with:
-          name: dist
+          name: front
           path: ./front/dist/
 
       - name: Adding Known Hosts
