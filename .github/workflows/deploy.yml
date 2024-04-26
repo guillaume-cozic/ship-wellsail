@@ -17,18 +17,6 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-jobs:
-  build-backend:
-    runs-on: ubuntu-latest
-
-    strategy:
-      matrix:
-        node-version: [ 18.17.1 ]
-
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-
       - name: Setup SSH Agent
         uses: webfactory/ssh-agent@v0.5.4
         with:
