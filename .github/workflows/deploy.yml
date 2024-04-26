@@ -17,12 +17,42 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Setup SSH
+jobs:
+  build-backend:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [ 18.17.1 ]
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup SSH Agent
+        uses: webfactory/ssh-agent@v0.5.4
+        with:
+          ssh-private-key: ${{ secrets.SERVER_SSH_KEY }}
+
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      - name: Install dependencies
+        run: npm install
+        working-directory: ./back
+      - run: npm run build
+        working-directory: ./back
+
+      - name: rsync
         run: |
-          mkdir -p ~/.ssh/
-          echo ${{ secrets.SERVER_SSH_KEY }} > ~/.ssh/id_rsa
-          chmod 600 ~/.ssh/id_rsa
-          ssh-keyscan -t rsa ${{ secrets.SERVER_HOST }} >> ~/.ssh/known_hosts
+          rsync -avz -e "ssh" --delete /dist/ ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_HOST }}:/var/www/welltest/back
+        working-directory: ./back
+
+      - name: Run SSH command
+        run: |
+          ssh ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_HOST }} "<Your SSH command here>"
 
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v4
