@@ -39,7 +39,7 @@ jobs:
 
       - name: rsync
         run: |
-          rsync -avz --delete /dist/ ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_HOST }}:/var/www/welltest/back
+          rsync -avz --delete dist/ ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_HOST }}:/var/www/welltest/back/
         working-directory: ./back
 
 
