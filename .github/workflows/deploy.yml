@@ -27,21 +27,6 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
 
-      - name: Install dependencies
-        run: npm install
-        working-directory: ./back
-      - run: npm run build
-        working-directory: ./back
-
-      - name: rsync
-        run: |
-          rsync -avz -e "ssh" --delete /dist/ ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_HOST }}:/var/www/welltest/back
-        working-directory: ./back
-
-      - name: Run SSH command
-        run: |
-          ssh ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_HOST }} "<Your SSH command here>"
-
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v4
         with:
@@ -56,7 +41,7 @@ jobs:
 
       - name: rsync
         run: |
-          rsync -avz -e "ssh -i ~/.ssh/id_rsa" --delete /dist/ ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_HOST }}:/var/www/welltest/back
+          rsync -avz --delete /dist/ ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_HOST }}:/var/www/welltest/back
         working-directory: ./back
 
 
