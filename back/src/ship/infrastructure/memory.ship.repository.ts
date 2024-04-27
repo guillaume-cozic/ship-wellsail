@@ -337,7 +337,7 @@ export class MemoryShipRepository implements ShipRepository {
       subscription_link: '',
       ticketing: '',
       website: 'https://syro.co/en/company-about-syroco/',
-      show_contact_btn: true,
+      show_contact_btn: false,
       flag: 'FR',
     },
     {
@@ -353,7 +353,7 @@ export class MemoryShipRepository implements ShipRepository {
       subscription_link: '',
       ticketing: '',
       website: 'https://beyond-the-sea.com',
-      show_contact_btn: true,
+      show_contact_btn: false,
       flag: 'FR',
     },
   ];
