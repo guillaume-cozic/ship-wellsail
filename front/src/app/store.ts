@@ -2,7 +2,6 @@ import type { Action, ThunkAction } from "@reduxjs/toolkit"
 import { combineSlices, configureStore } from "@reduxjs/toolkit"
 import { setupListeners } from "@reduxjs/toolkit/query"
 import {shipsSlice} from "../features/ships/shipsSlice";
-import {InMemoryShipApi} from "../features/api/InMemoryShipApi";
 import {ShipApi} from "../features/api/ShipApi";
 
 // `combineSlices` automatically combines the reducers using
