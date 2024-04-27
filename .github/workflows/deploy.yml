@@ -64,10 +64,10 @@ jobs:
 
       - name: rsync
         run: |
-          rsync -avz --delete dist/ ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_HOST }}:/var/www/welltest/back/dist/
-          rsync -avz --delete node_modules/ ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_HOST }}:/var/www/welltest/back/node_modules/
-          rsync -avz --delete package.json ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_HOST }}:/var/www/welltest/back/
-          rsync -avz --delete package-lock.json ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_HOST }}:/var/www/welltest/back/
+          rsync -avz --delete dist/ ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_HOST }}:/var/www/wellsail/back/dist/
+          rsync -avz --delete node_modules/ ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_HOST }}:/var/www/wellsail/back/node_modules/
+          rsync -avz --delete package.json ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_HOST }}:/var/www/wellsail/back/
+          rsync -avz --delete package-lock.json ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_HOST }}:/var/www/wellsail/back/
         working-directory: ./back
 
       - name: Restart PM2 process
@@ -128,10 +128,10 @@ jobs:
 
       - name: rsync
         run: |
-          rsync -avz --delete dist/ ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_HOST }}:/var/www/welltest/front/dist/
-          rsync -avz --delete node_modules/ ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_HOST }}:/var/www/welltest/front/node_modules/
-          rsync -avz --delete package-lock.json ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_HOST }}:/var/www/welltest/front/
-          rsync -avz --delete package.json ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_HOST }}:/var/www/welltest/front/
+          rsync -avz --delete dist/ ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_HOST }}:/var/www/wellsail/front/dist/
+          rsync -avz --delete node_modules/ ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_HOST }}:/var/www/wellsail/front/node_modules/
+          rsync -avz --delete package-lock.json ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_HOST }}:/var/www/wellsail/front/
+          rsync -avz --delete package.json ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_HOST }}:/var/www/wellsail/front/
         working-directory: ./front
 
 
