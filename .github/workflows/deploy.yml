@@ -24,9 +24,9 @@ jobs:
 
       - name: Generate .env file
         run: |
-          echo ORIGIN=${{ env.ORIGIN }} >> .env
-          echo MAIL_HOST=${{ env.MAIL_HOST }} >> .env
-          echo MAIL_PORT=${{ env.MAIL_PORT }} >> .env
+          echo ORIGIN=${{ vars.ORIGIN }} >> .env
+          echo MAIL_HOST=${{ vars.MAIL_HOST }} >> .env
+          echo MAIL_PORT=${{ vars.MAIL_PORT }} >> .env
           echo MAIL_USERNAME=${{ secrets.MAIL_USERNAME }} >> .env
           echo MAIL_PASSWORD=${{ secrets.MAIL_PASSWORD }} >> .env
         working-directory: ./back
@@ -92,7 +92,7 @@ jobs:
 
       - name: Generate .env file
         run: |
-          echo VITE_API_URL=${{ env.VITE_API_URL }} >> .env
+          echo VITE_API_URL=${{ vars.VITE_API_URL }} >> .env
         working-directory: ./front
 
       - name: Install dependencies
