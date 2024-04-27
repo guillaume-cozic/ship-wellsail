@@ -106,7 +106,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: front
-          path: ./front/dist/
+          path: ./front/
 
   deploy-frontend:
     needs: [build-backend, build-frontend]
@@ -121,7 +121,7 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: front
-          path: ./front/dist/
+          path: ./front/
 
       - name: Adding Known Hosts
         run: ssh-keyscan -H ${{ secrets.SERVER_HOST }} >> ~/.ssh/known_hosts
@@ -129,6 +129,9 @@ jobs:
       - name: rsync
         run: |
           rsync -avz --delete dist/ ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_HOST }}:/var/www/welltest/front/dist/
+          rsync -avz --delete node_modules/ ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_HOST }}:/var/www/welltest/front/node_modules/
+          rsync -avz --delete package-lock.json/ ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_HOST }}:/var/www/welltest/front/
+          rsync -avz --delete package.json/ ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_HOST }}:/var/www/welltest/front/
         working-directory: ./front
 
 
