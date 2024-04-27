@@ -72,7 +72,7 @@ jobs:
 
       - name: Restart PM2 process
         run: |
-          ssh ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_HOST }} 'pm2 restart wellsail'
+          ssh ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_HOST }} 'source ~/.nvm/nvm.sh && pm2 restart wellsail'
 
   build-frontend:
     runs-on: ubuntu-latest
