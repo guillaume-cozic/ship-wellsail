@@ -42,7 +42,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: back
-          path: ./back/dist/
+          path: ./back/
 
   deploy-backend:
     needs: [build-backend, build-frontend]
@@ -57,7 +57,7 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: back
-          path: ./back
+          path: ./back/
 
       - name: Adding Known Hosts
         run: ssh-keyscan -H ${{ secrets.SERVER_HOST }} >> ~/.ssh/known_hosts
@@ -65,15 +65,14 @@ jobs:
       - name: rsync
         run: |
           rsync -avz --delete dist/ ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_HOST }}:/var/www/welltest/back/dist/
-        working-directory: ./back
-
-      - name: rsync
-        run: |
           rsync -avz --delete node_modules/ ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_HOST }}:/var/www/welltest/back/node_modules/
+          rsync -avz --delete package.json ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_HOST }}:/var/www/welltest/back/
+          rsync -avz --delete package-lock.json ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_HOST }}:/var/www/welltest/back/
         working-directory: ./back
 
       - name: Restart PM2 process
-        run: ssh ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_HOST }} 'pm2 restart wellsail'
+        run: |
+          ssh ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_HOST }} 'pm2 restart wellsail'
 
   build-frontend:
     runs-on: ubuntu-latest
