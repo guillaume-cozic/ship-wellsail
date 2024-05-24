@@ -10,14 +10,14 @@ export class MemoryShipRepository implements ShipRepository {
       detail: ['350 tonnes de marchandises'],
       next_departure: '2024',
       percentage_decarbonization: 90,
-      image:
-        'https://media.ouest-france.fr/v1/pictures/MjAyMTA3OWQwZDliZmExMDE5M2QyYmVlMDFiYTJjN2I4NWJlMmY?width=1260&focuspoint=50%2C62&cropresize=1&client_id=bpeditorial&sign=c42d54797209f0a22b6fab397440f9a0f0a7dfdebc79704b2f7784d7727e9ed2',
+      image: 'https://media.ouest-france.fr/v1/pictures/MjAyMTA3OWQwZDliZmExMDE5M2QyYmVlMDFiYTJjN2I4NWJlMmY?width=1260&focuspoint=50%2C62&cropresize=1&client_id=bpeditorial&sign=c42d54797209f0a22b6fab397440f9a0f0a7dfdebc79704b2f7784d7727e9ed2',
       type: 'freight',
       subscription_link: '',
       ticketing: '',
       website: 'https://graindesail.com/fr/',
       show_contact_btn: true,
       flag: 'FR',
+      velic_type: 'main',
     },
     {
       id: 2,
@@ -34,6 +34,7 @@ export class MemoryShipRepository implements ShipRepository {
       website: 'https://www.wind.coop',
       show_contact_btn: true,
       flag: 'FR',
+      velic_type: 'main',
     },
     {
       id: 3,
@@ -50,6 +51,7 @@ export class MemoryShipRepository implements ShipRepository {
       website: 'https://www.sailcoop.fr',
       show_contact_btn: true,
       flag: 'FR',
+      velic_type: 'main',
     },
     {
       id: 4,
@@ -66,6 +68,7 @@ export class MemoryShipRepository implements ShipRepository {
       website: 'https://www.towt.eu',
       show_contact_btn: true,
       flag: 'FR',
+      velic_type: 'main',
     },
     {
       id: 5,
@@ -82,6 +85,7 @@ export class MemoryShipRepository implements ShipRepository {
       website: 'https://www.ecotransocean.com',
       show_contact_btn: true,
       flag: 'FR',
+      velic_type: 'hybrid',
     },
     {
       id: 6,
@@ -98,6 +102,7 @@ export class MemoryShipRepository implements ShipRepository {
       website: 'https://hisseo.org',
       show_contact_btn: true,
       flag: 'FR',
+      velic_type: 'main',
     },
     {
       id: 7,
@@ -113,6 +118,7 @@ export class MemoryShipRepository implements ShipRepository {
       website: 'https://iliens.fr',
       show_contact_btn: true,
       flag: 'FR',
+      velic_type: 'main',
     },
     {
       id: 8,
@@ -129,6 +135,7 @@ export class MemoryShipRepository implements ShipRepository {
       website: 'https://www.neoline.eu',
       show_contact_btn: true,
       flag: 'FR',
+      velic_type: 'main',
     },
     {
       id: 9,
@@ -145,6 +152,7 @@ export class MemoryShipRepository implements ShipRepository {
       website: 'https://www.nohe-wear.com',
       show_contact_btn: false,
       flag: 'FR',
+      velic_type: 'main',
     },
     {
       id: 10,
@@ -161,6 +169,7 @@ export class MemoryShipRepository implements ShipRepository {
       website: 'https://saillink.co.uk',
       show_contact_btn: false,
       flag: 'GB',
+      velic_type: 'main',
     },
     {
       id: 11,
@@ -177,6 +186,7 @@ export class MemoryShipRepository implements ShipRepository {
       website: 'https://www.vplp.fr/maritime/canopee/',
       show_contact_btn: true,
       flag: 'FR',
+      velic_type: 'assist',
     },
     {
       id: 12,
@@ -193,6 +203,7 @@ export class MemoryShipRepository implements ShipRepository {
       website: 'https://graindesail.com/fr/',
       show_contact_btn: true,
       flag: 'FR',
+      velic_type: 'main',
     },
     {
       id: 13,
@@ -210,6 +221,7 @@ export class MemoryShipRepository implements ShipRepository {
         'https://www.linkedin.com/company/le-caboteur-des-%C3%AEles/?originalSubdomain=fr',
       show_contact_btn: true,
       flag: 'FR',
+      velic_type: 'main',
     },
     {
       id: 14,
@@ -226,6 +238,7 @@ export class MemoryShipRepository implements ShipRepository {
       website: 'https://www.passeurdesiles.com',
       show_contact_btn: true,
       flag: 'FR',
+      velic_type: 'main',
     },
     {
       id: 15,
@@ -242,6 +255,7 @@ export class MemoryShipRepository implements ShipRepository {
       website: 'https://www.terreexotique.fr/programme-eole',
       show_contact_btn: true,
       flag: 'FR',
+      velic_type: 'main',
     },
     {
       id: 16,
@@ -258,6 +272,7 @@ export class MemoryShipRepository implements ShipRepository {
       website: 'https://www.scandlines.com',
       show_contact_btn: true,
       flag: 'DE',
+      velic_type: 'assist',
     },
     {
       id: 17,
@@ -274,6 +289,7 @@ export class MemoryShipRepository implements ShipRepository {
       website: 'https://www.scandlines.com',
       show_contact_btn: true,
       flag: 'DK',
+      velic_type: 'assist',
     },
     {
       id: 18,
@@ -288,8 +304,9 @@ export class MemoryShipRepository implements ShipRepository {
       subscription_link: '',
       ticketing: '',
       website: 'https://www.cldn.com',
-      show_contact_btn: true,
+      show_contact_btn: false,
       flag: 'MT',
+      velic_type: 'assist',
     },
     {
       id: 19,
@@ -307,6 +324,7 @@ export class MemoryShipRepository implements ShipRepository {
       website: 'https://bourlingueetpacotille.com',
       show_contact_btn: true,
       flag: 'FR',
+      velic_type: 'main',
     },
     {
       id: 20,
@@ -323,6 +341,7 @@ export class MemoryShipRepository implements ShipRepository {
       website: 'https://www.sailcoop.fr',
       show_contact_btn: true,
       flag: 'FR',
+      velic_type: 'main',
     },
     {
       id: 21,
@@ -337,8 +356,9 @@ export class MemoryShipRepository implements ShipRepository {
       subscription_link: '',
       ticketing: '',
       website: 'https://syro.co/en/company-about-syroco/',
-      show_contact_btn: false,
+      show_contact_btn: true,
       flag: 'FR',
+      velic_type: 'main',
     },
     {
       id: 21,
@@ -353,8 +373,9 @@ export class MemoryShipRepository implements ShipRepository {
       subscription_link: '',
       ticketing: '',
       website: 'https://beyond-the-sea.com',
-      show_contact_btn: false,
+      show_contact_btn: true,
       flag: 'FR',
+      velic_type: 'main',
     },
   ];
 

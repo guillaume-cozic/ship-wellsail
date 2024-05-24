@@ -64,19 +64,24 @@ export const ShipCard = (props: {ship: Ship}) => {
                                 </Badge>
                             }
                         </HStack>
-                        { ship.percentage_decarbonization > 0 &&
-                            <Flex justifyContent="space-between">
-                                <chakra.h3 fontSize={{base: 'lg', md: 'xl'}} fontWeight="bold">
-                                    <Text>
-                                        Décarbonation :
-                                        <Badge ml='1' fontSize='0.8em'
-                                               colorScheme={ship.percentage_decarbonization > 79 ? 'green' : 'purple'}>
-                                            {ship.percentage_decarbonization} %
-                                        </Badge>
-                                    </Text>
-                                </chakra.h3>
-                            </Flex>
-                        }
+                        <Flex justifyContent="space-between">
+                            <chakra.h3 fontSize={{base: 'lg', md: 'xl'}} fontWeight="bold">
+                                <Text>
+                                    <Badge ml='1' fontSize='0.8em'
+                                           colorScheme={ship.percentage_decarbonization > 79 ? 'green' : 'purple'}>
+                                        { ship.velic_type && ship.velic_type === 'main' &&
+                                            <>Propulsion principale</>
+                                        }
+                                        { ship.velic_type && ship.velic_type === 'assist' &&
+                                            <>Assistance vélique</>
+                                        }
+                                        { ship.velic_type && ship.velic_type === 'hybrid' &&
+                                            <>Propulsion hydride</>
+                                        }
+                                    </Badge>
+                                </Text>
+                            </chakra.h3>
+                        </Flex>
                     </Stack>
                     <Stack>
                         <Stack direction="row">
@@ -131,7 +136,7 @@ export const ShipCard = (props: {ship: Ship}) => {
                                     </Link>
                                 </Button>
                             }
-                            {ship.type === 'passengers' && ship.show_contact_btn && !ship.ticketing &&
+                            {ship.type !== 'freight' && ship.show_contact_btn && !ship.ticketing &&
                                 <Button
                                         rounded="md"
                                         variant='outline'
