@@ -12,4 +12,5 @@ export default interface Ship {
     ticketing: string | undefined;
     show_contact_btn: boolean;
     flag: string;
+    velic_type: string | undefined;
 }
