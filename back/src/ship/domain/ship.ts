@@ -12,4 +12,6 @@ export interface Ship {
   website: string | undefined;
   show_contact_btn: boolean;
   flag: string;
+  velic_type: string;
 }
+

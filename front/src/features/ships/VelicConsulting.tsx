@@ -23,7 +23,8 @@ const VelicConsulting = () => {
         website: '',
         ticketing: '',
         show_contact_btn: false,
-        flag: ''
+        flag: '',
+        velic_consulting: '',
     };
 
     return (
