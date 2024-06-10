@@ -5,7 +5,7 @@ import { MemoryShipRepository } from './ship/infrastructure/memory.ship.reposito
 import { MailerModule } from '@nestjs-modules/mailer';
 import { PugAdapter } from '@nestjs-modules/mailer/dist/adapters/pug.adapter';
 import { RequestFreightTransport } from './ship/application/request.freight.transport';
-import {MailerProvider, MeetingRepositoryProvider} from './ship/Providers';
+import { MailerProvider, MeetingRepositoryProvider } from './ship/Providers';
 
 @Module({
   imports: [

@@ -10,7 +10,7 @@ export class MemoryShipRepository implements ShipRepository {
       detail: ['350 tonnes de marchandises'],
       next_departure: '2024',
       percentage_decarbonization: 90,
-      image: 'https://media.ouest-france.fr/v1/pictures/MjAyMTA3OWQwZDliZmExMDE5M2QyYmVlMDFiYTJjN2I4NWJlMmY?width=1260&focuspoint=50%2C62&cropresize=1&client_id=bpeditorial&sign=c42d54797209f0a22b6fab397440f9a0f0a7dfdebc79704b2f7784d7727e9ed2',
+      image: 'grain-de-sail2.png',
       type: 'freight',
       subscription_link: '',
       ticketing: '',
@@ -26,8 +26,7 @@ export class MemoryShipRepository implements ShipRepository {
       detail: ['1400 tonnes de marchandises'],
       next_departure: '2026',
       percentage_decarbonization: 60,
-      image:
-        'https://static.actu.fr/uploads/2022/11/le-premier-container-a-voile-pour-arcadie.jpg',
+      image: 'windcoop.jpg',
       type: 'freight',
       subscription_link: '',
       ticketing: '',
@@ -44,8 +43,7 @@ export class MemoryShipRepository implements ShipRepository {
       detail: ['8 passagers'],
       next_departure: 'Avril 2024',
       percentage_decarbonization: 90,
-      image:
-        'https://media.ouest-france.fr/v1/pictures/MjAyMjA1MmNiYTcwMGJiMmZiYzc1MGMyZGFhZDM4NTBmODUxYTY?width=1260&focuspoint=50%2C25&cropresize=1&client_id=bpeditorial&sign=b256d313ae43518b28d1299fe28951652e836c3af4dad631cbd04105c45b4aca',
+      image: 'sailcoop.jpeg',
       subscription_link: 'https://souscription.sailcoop.fr',
       ticketing: 'https://resa.sailcoop.fr/fr/voir-et-a-faire',
       website: 'https://www.sailcoop.fr',
@@ -60,8 +58,7 @@ export class MemoryShipRepository implements ShipRepository {
       detail: ['1100 tonnes de marchandises'],
       next_departure: '2026',
       percentage_decarbonization: 90,
-      image:
-        'https://www.towt.eu/wp-content/uploads/2022/09/PIRIOU_voilier-cargoTOWT_1-scaled-1-1.jpg',
+      image: 'anemos.jpeg',
       type: 'freight',
       subscription_link: '',
       ticketing: '',
@@ -77,8 +74,7 @@ export class MemoryShipRepository implements ShipRepository {
       detail: ['Bretagne Polynésie en 6 semaines'],
       next_departure: '2026',
       percentage_decarbonization: 60,
-      image:
-        'https://www.ecotransocean.com/wp-content/uploads/2021/12/EcoTransOcean_Aplat1.jpg',
+      image: 'ecotrans-ocean.jpg',
       type: 'freight',
       subscription_link: '',
       ticketing: '',
@@ -94,8 +90,7 @@ export class MemoryShipRepository implements ShipRepository {
       detail: ['100 tonnes de marchandises'],
       next_departure: '2026',
       percentage_decarbonization: 90,
-      image:
-        'https://hisseo.org/wp-content/uploads/2024/03/voilier-moderne-1024x703.png',
+      image: 'hisseo.png',
       type: 'freight',
       subscription_link: 'https://hisseo.org/devenir-societaire/',
       ticketing: '',
@@ -111,7 +106,7 @@ export class MemoryShipRepository implements ShipRepository {
       detail: ['20 passagers'],
       next_departure: '2026',
       percentage_decarbonization: 90,
-      image: 'https://iliens.fr/wp-content/uploads/2022/05/iliens-2022-1.jpg',
+      image: 'iliens.jpg',
       type: 'passengers',
       subscription_link: '',
       ticketing: 'https://iliens.fr/tarifs-et-horaires-2/',
@@ -127,8 +122,7 @@ export class MemoryShipRepository implements ShipRepository {
       detail: ['265 EVP'],
       next_departure: '2026',
       percentage_decarbonization: 90,
-      image:
-        'https://www.neoline.eu/wp-content/uploads/2023/01/22407-A-NEOLINER136SS-Vues-3D_Rendu-2-Baltimore-1800x1080.jpg',
+      image: 'neoline.jpg',
       type: 'freight',
       subscription_link: '',
       ticketing: '',
@@ -144,8 +138,7 @@ export class MemoryShipRepository implements ShipRepository {
       detail: ['Confection de vêtements bas carbone'],
       next_departure: '2026',
       percentage_decarbonization: 90,
-      image:
-        'https://www.nohe-wear.com/cdn/shop/files/transport_voile_nohe_mode_responsable_1248x704.jpg?v=1696326531',
+      image: 'nohe.webp',
       type: 'freight',
       subscription_link: '',
       ticketing: '',
@@ -161,8 +154,7 @@ export class MemoryShipRepository implements ShipRepository {
       detail: ['4 heures de traversé'],
       next_departure: '2026',
       percentage_decarbonization: 90,
-      image:
-        'https://files.wbk.kreativmedia.ch/3b/c6/3bc63aea-d191-45b8-b0db-4ec2a77b83d8.jpg',
+      image: 'saillink.webp',
       type: 'passengers',
       subscription_link: 'https://saillink.co.uk/invest',
       ticketing: '',
@@ -178,8 +170,7 @@ export class MemoryShipRepository implements ShipRepository {
       detail: ["Transport d'arianne 6"],
       next_departure: '2026',
       percentage_decarbonization: 40,
-      image:
-        'https://www.vplp.fr/wp-content/uploads/2023/03/Header-Canopee-1500x750px-1.png',
+      image: 'canopee.png',
       type: 'freight',
       subscription_link: '',
       ticketing: '',
@@ -195,8 +186,7 @@ export class MemoryShipRepository implements ShipRepository {
       detail: ['50 tonnes de marchandises'],
       next_departure: '2024',
       percentage_decarbonization: 90,
-      image:
-        'https://velic-consulting.com/wp-content/uploads/2023/10/GrainDeSail1.png',
+      image: 'grain-de-sail.png',
       type: 'freight',
       subscription_link: '',
       ticketing: '',
@@ -212,8 +202,7 @@ export class MemoryShipRepository implements ShipRepository {
       detail: ['Baie de Quiberon'],
       next_departure: '2026',
       percentage_decarbonization: 90,
-      image:
-        'https://media.licdn.com/dms/image/D4E0BAQEX2p1uUHRuWA/company-logo_200_200/0/1704297881648?e=1720051200&v=beta&t=fktmWBCMUUmvNAOrBZYI88l_YXdmJcEUox9cej-g_Oo',
+      image: 'caboteur-des-iles.jpeg',
       type: 'freight',
       subscription_link: '',
       ticketing: '',
@@ -230,8 +219,7 @@ export class MemoryShipRepository implements ShipRepository {
       detail: ['20 min de traversée', '60 passagers'],
       next_departure: '2025',
       percentage_decarbonization: 90,
-      image:
-        'https://media.letelegramme.fr/api/v1/images/view/6582cae3ad005d5c841166eb/web_golden_xl/6582cae3ad005d5c841166eb.1',
+      image: 'passeur-des-iles.png',
       type: 'passengers',
       subscription_link: '',
       ticketing: '',
@@ -247,8 +235,7 @@ export class MemoryShipRepository implements ShipRepository {
       detail: ["transport d'épices"],
       next_departure: '2024',
       percentage_decarbonization: 90,
-      image:
-        'https://assets.meretmarine.com/s3fs-public/styles/large_xl/public/images/2024-01/Terre%20Txotique%20Imoca.jpg?h=7a740ff7&itok=TXTqv_uq',
+      image: 'terre-exotique.jpg',
       type: 'freight',
       subscription_link: '',
       ticketing: '',
@@ -264,8 +251,7 @@ export class MemoryShipRepository implements ShipRepository {
       detail: ['Rotor'],
       next_departure: '2024',
       percentage_decarbonization: 20,
-      image:
-        'https://velic-consulting.com/wp-content/uploads/2023/10/Berlin.jpg',
+      image: 'berlin.jpg',
       type: 'passengers',
       subscription_link: '',
       ticketing: '',
@@ -281,8 +267,7 @@ export class MemoryShipRepository implements ShipRepository {
       detail: ['Rotor'],
       next_departure: '2024',
       percentage_decarbonization: 20,
-      image:
-        'https://velic-consulting.com/wp-content/uploads/2023/10/CopenHagen.png',
+      image: 'copenhagen.png',
       type: 'passengers',
       subscription_link: '',
       ticketing: '',
@@ -298,8 +283,7 @@ export class MemoryShipRepository implements ShipRepository {
       detail: ['Rotor', 'Short Sea Shipping'],
       next_departure: '2024',
       percentage_decarbonization: 20,
-      image:
-        'https://swzmaritime.nl/wp-content/uploads/2023/02/Delphine-fitted-with-Rotor-sails.jpg',
+      image: 'delphine.jpg',
       type: 'freight',
       subscription_link: '',
       ticketing: '',
@@ -315,8 +299,7 @@ export class MemoryShipRepository implements ShipRepository {
       detail: ['4 tonnes de marchandises'],
       next_departure: '2024',
       percentage_decarbonization: 90,
-      image:
-        'https://bourlingueetpacotille.com/wp-content/uploads/2023/07/nav__cie_LD_057-1568x1046.jpg',
+      image: 'bourlingue-pacotille.jpg',
       type: 'freight',
       subscription_link:
         'https://bourlingueetpacotille.com/devenir-societaire-de-bourlingue-et-pacotille/',
@@ -333,8 +316,7 @@ export class MemoryShipRepository implements ShipRepository {
       detail: ['Fabriqué à la Rochelle'],
       next_departure: '2024',
       percentage_decarbonization: 90,
-      image:
-        'https://media.ouest-france.fr/v1/pictures/MjAyMzA5NzVkMGYxYWJkYWU5NTY5NTA0YzA4YmJkNGYwNzEzY2E?width=1260&focuspoint=50%2C25&cropresize=1&client_id=bpeditorial&sign=02691ffdce8d734bfd57bb28bf400e6750e2a225ff8b855c560dc424ba1406b5',
+      image: 'sailcoop61.jpg',
       type: 'passengers',
       subscription_link: 'https://souscription.sailcoop.fr',
       ticketing: '',
@@ -350,8 +332,7 @@ export class MemoryShipRepository implements ShipRepository {
       detail: ['Objectif 150 KM/H'],
       next_departure: '2023',
       percentage_decarbonization: 0,
-      image:
-        'https://media.lesechos.com/api/v1/images/view/62e644d9d345887219143d08/1280x720/0701782796524-web-tete.jpg',
+      image: 'syroco.jpg',
       type: 'proto',
       subscription_link: '',
       ticketing: '',
@@ -367,8 +348,7 @@ export class MemoryShipRepository implements ShipRepository {
       detail: ['Solution de traction par kite'],
       next_departure: '2023',
       percentage_decarbonization: 0,
-      image:
-        'https://beyond-the-sea.com/wp-content/uploads/2024/04/YVES_PARLIER_BTS_ESSAIS_50M2_FEVRIER_2024_50-copie-1200x899.jpg',
+      image: 'the-sea-kite.jpg',
       type: 'proto',
       subscription_link: '',
       ticketing: '',

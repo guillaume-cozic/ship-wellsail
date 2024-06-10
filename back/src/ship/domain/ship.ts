@@ -14,4 +14,3 @@ export interface Ship {
   flag: string;
   velic_type: string;
 }
-

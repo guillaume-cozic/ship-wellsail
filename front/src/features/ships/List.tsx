@@ -19,7 +19,7 @@ const List = () => {
     return (
         <Stack display="flex" justifyContent="center" p={2}>
             {ships && ships.map((ship, index) => (
-                <Stack key={index} alignItems="center">
+                <Stack key={index} alignItems="center" w="100%">
                     <ShipCard ship={ship}/>
                     {index === 2 &&
                         <VelicConsulting/>

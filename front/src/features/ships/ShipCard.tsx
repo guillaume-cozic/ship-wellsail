@@ -19,29 +19,27 @@ import type Ship from "../api/Ship";
 
 export const ShipCard = (props: {ship: Ship}) => {
     let ship = props.ship;
-
+    let baseUrl = import.meta.env.VITE_API_URL;
     return (
         <Stack
-            spacing={{base: 2, md: 4}}
             direction={{base: 'column', md: 'row'}}
             border="1px solid"
             borderColor="gray.400"
             p={2}
             rounded="md"
-            w={{sm: "90%", md:"90%", '2xl':"70%"}}
-            overflow="hidden"
+            w={{base: "100%", xl: "70%", '2xl':"70%"}}
         >
-            <Grid templateColumns='repeat(10, 1fr)' gap={2}>
-                <GridItem colSpan={{base:10, md:3}} minW={{'2xl': "367px"}} display="flex" justifyContent="center">
+            <Grid templateColumns='repeat(10, 1fr)' gap={2} w={{base: "100%"}}>
+                <GridItem colSpan={{base:10, md: 4, xl:3, '2xl': 3}} display="flex" justifyContent="center">
                     <Image
                         rounded="md"
                         objectFit="cover"
-                        src={ship.image}
+                        src={baseUrl + '/' + ship.image}
                         alt={ship.title}
                     />
                 </GridItem>
-                <GridItem colSpan={{base:10, md:7}} display="grid" alignContent="space-between">
-                    <Stack mt={2} direction={{ md:"row", base:"column" }} justifyContent="space-between">
+                <GridItem colSpan={{base:10, md:6, xl:7}} display="grid" alignContent="space-between">
+                    <Stack mt={2} direction={{ xl:"row", md:"column", base:"column" }} justifyContent="space-between">
                         <HStack>
                             <Link target="_blank" href={ship.website}>
                                 <chakra.h3 fontSize={{base: 'lg', md: 'xl'}} fontWeight="bold">
@@ -65,7 +63,6 @@ export const ShipCard = (props: {ship: Ship}) => {
                             }
                         </HStack>
                         <Flex justifyContent="space-between">
-                            <chakra.h3 fontSize={{base: 'lg', md: 'xl'}} fontWeight="bold">
                                 <Text>
                                     <Badge ml='1' fontSize='0.8em'
                                            colorScheme={ship.percentage_decarbonization > 79 ? 'green' : 'purple'}>
@@ -80,7 +77,6 @@ export const ShipCard = (props: {ship: Ship}) => {
                                         }
                                     </Badge>
                                 </Text>
-                            </chakra.h3>
                         </Flex>
                     </Stack>
                     <Stack>
@@ -113,7 +109,7 @@ export const ShipCard = (props: {ship: Ship}) => {
                             ))}
                         </Flex>
                     </Stack>
-                    <Stack direction={{ md:"row-reverse", base:"column" }} spacing={1}  >
+                    <Stack direction={{ base:"column", xl:"row-reverse", md:"column" }} spacing={1}  >
                             {ship.subscription_link && ship.subscription_link &&
                                 <Button leftIcon={<FaPeopleCarry/>}
                                         colorScheme="blue"

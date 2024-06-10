@@ -10,6 +10,8 @@ import {ContactCarrier} from "./ContactCarrier";
 
 const VelicConsulting = () => {
 
+    let baseUrl = import.meta.env.VITE_API_URL;
+
     let ship = {
         id: 9999,
         title: 'Velic consulting',
@@ -17,7 +19,7 @@ const VelicConsulting = () => {
         location: '',
         next_departure: '',
         percentage_decarbonization: 0,
-        image: '',
+        image: 'velic_consulting_logo.jpeg',
         subscription_link: '',
         type: '',
         website: '',
@@ -29,26 +31,23 @@ const VelicConsulting = () => {
 
     return (
         <Stack
-            key="velic"
-            spacing={{base: 2, md: 4}}
             direction={{base: 'column', md: 'row'}}
             border="1px solid"
             borderColor="gray.400"
             p={2}
             rounded="md"
-            w={{sm: "98%", md:"90%", '2xl':"70%"}}
-            overflow="hidden"
+            w={{base: "100%", xl: "70%", '2xl':"70%"}}
         >
-            <Grid templateColumns='repeat(10, 1fr)' gap={2}>
-                <GridItem colSpan={{base: 10, md: 3}} minW="367px" display="flex" justifyContent="center">
+            <Grid templateColumns='repeat(10, 1fr)' gap={2} w={{base: "100%"}}>
+                <GridItem colSpan={{base:10, md: 4, xl:3, '2xl': 3}} display="flex" justifyContent="center">
                     <Image
                         rounded="md"
                         objectFit="cover"
-                        src="https://media.licdn.com/dms/image/D4E0BAQEhqQg_V6rIQg/company-logo_200_200/0/1692347401618/velic_consulting_logo?e=2147483647&v=beta&t=A3RT410rsl6HzdSbe13Y5Yux7EDva8l28hPlALVDkZU"
+                        src={baseUrl + '/' + ship.image}
                         alt="Velic consulting"
                     />
                 </GridItem>
-                <GridItem colSpan={{base: 10, md: 7}} display="grid" alignContent="space-between">
+                <GridItem colSpan={{base: 10, md: 6, xl: 7}} display="grid" alignContent="space-between">
                     <HStack spacing={2}>
                         <chakra.h3 fontWeight="bold">
                             Velic consulting
@@ -61,23 +60,23 @@ const VelicConsulting = () => {
                         <List justifyContent="left !important">
                             <ListItem>
                                 <ListIcon as={MdCheckCircle} color='green.500'/>
-                                Accompagnement
+                                Accompagnement sur l'utilisation du vent pour votre projet
                             </ListItem>
                             <ListItem>
                                 <ListIcon as={MdCheckCircle} color='green.500'/>
-                                Recherche de financement
+                                Recherche de financement - montage de dossier - levée de fonds
                             </ListItem>
                             <ListItem>
                                 <ListIcon as={MdCheckCircle} color='green.500'/>
-                                Etude de marché
+                                Etude de marché - formation
                             </ListItem>
                             <ListItem>
                                 <ListIcon as={MdCheckCircle} color='green.500'/>
-                                Développement web
+                                Développement web sur mesure - Mise en place solution open source
                             </ListItem>
                         </List>
                     </Flex>
-                    <Stack direction={{md: "row-reverse", base: "column"}} spacing={1}>
+                    <Stack direction={{ base:"column", xl:"row-reverse", md:"column" }} spacing={1}>
                         <ContactCarrier
                             ship={ship}
                             showVelic={true}>
