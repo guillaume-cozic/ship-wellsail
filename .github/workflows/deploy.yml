@@ -65,6 +65,7 @@ jobs:
       - name: rsync
         run: |
           rsync -avz --delete dist/ ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_HOST }}:/var/www/wellsail/back/dist/
+          rsync -avz --delete public/ ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_HOST }}:/var/www/wellsail/back/public/
           rsync -avz --delete node_modules/ ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_HOST }}:/var/www/wellsail/back/node_modules/
           rsync -avz --delete package.json ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_HOST }}:/var/www/wellsail/back/
           rsync -avz --delete package-lock.json ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_HOST }}:/var/www/wellsail/back/
